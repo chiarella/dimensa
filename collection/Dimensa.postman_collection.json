@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "a83ae8e5-6abd-4085-9a5f-8dc94dfc0bcd",
+		"name": "Dimensa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7429901"
+	},
+	"item": [
+		{
+			"name": "Criar Contato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeContato\": \"Andrson Chiarella\",\r\n    \"email\": \"chiarella@gmail.com\",\r\n    \"telefone\": 1199160101,\r\n    \"dtNascimento\": \"07/01/1990\",\r\n    \"enderecos\": [\r\n        {\r\n            \"rua\": \"rua 1\",\r\n            \"numero\": 10,\r\n            \"cep\": 11702430\r\n        },\r\n        {\r\n            \"rua\": \"rua 2\",\r\n            \"numero\": 20,\r\n            \"cep\": 11702520\r\n        },\r\n        {\r\n            \"rua\": \"rua 3\",\r\n            \"numero\": 30,\r\n            \"cep\": 11702650\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8082/dimensa/v1/contato"
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar contato",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeContato\": \"Andrson Chiarella\",\r\n    \"email\": \"chiarella@gmail.com\",\r\n    \"telefone\": 13991555555,\r\n    \"dtNascimento\": \"07/01/1990\",\r\n    \"enderecos\": [\r\n        {\r\n            \"rua\": \"rua 1\",\r\n            \"numero\": 10,\r\n            \"cep\": 11702430\r\n        },\r\n        {\r\n            \"rua\": \"rua 2\",\r\n            \"numero\": 20,\r\n            \"cep\": 11702520\r\n        },\r\n        {\r\n            \"rua\": \"rua 3\",\r\n            \"numero\": 30,\r\n            \"cep\": 11702650\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8082/dimensa/v1/contato/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar telefone",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": "http://localhost:8082/dimensa/v1/contato/1/3333333"
+			},
+			"response": []
+		},
+		{
+			"name": "Busca por id ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/dimensa/v1/contato/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar contatos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8082/dimensa/v1/contato"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar contato",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8082/dimensa/v1/contato/1"
+			},
+			"response": []
+		}
+	]
+}
