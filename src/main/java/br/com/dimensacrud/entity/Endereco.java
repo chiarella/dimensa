@@ -40,7 +40,7 @@ public class Endereco implements Serializable {
 	private Long numero;
 
 	@Column(name = "cep")
-	private Long cep;
+	private String cep;
 
 	@ToString.Exclude
 	@ManyToOne

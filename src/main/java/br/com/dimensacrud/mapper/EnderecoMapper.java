@@ -14,13 +14,12 @@ import br.com.dimensacrud.dto.EnderecoDTO;
 import br.com.dimensacrud.entity.Contato;
 import br.com.dimensacrud.entity.Endereco;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public abstract class EnderecoMapper {
 	
 	public static final EnderecoMapper INSTANCE = Mappers.getMapper(EnderecoMapper.class);
 	
 	@Mapping(target = "contato", ignore = true)
-	@Mapping(target = "idEndereco", ignore = true)
 	protected abstract Endereco dtoToDomain(EnderecoDTO dto, Contato domain);
 	
 	@AfterMapping

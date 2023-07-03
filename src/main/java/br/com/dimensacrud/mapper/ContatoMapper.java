@@ -12,7 +12,7 @@ import org.mapstruct.factory.Mappers;
 import br.com.dimensacrud.dto.ContatoDTO;
 import br.com.dimensacrud.entity.Contato;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public abstract class ContatoMapper {
 	
 	
@@ -30,12 +30,14 @@ public abstract class ContatoMapper {
 		}
 	}
 	
-	protected abstract List<Contato> listDtoToListDomain(List<ContatoDTO> listaEndereco);
-
 	public abstract ContatoDTO domainToDto(Contato optional);
 	
 	public abstract List<ContatoDTO> listDomainToListDto(List<Contato> findAll);
-
 	public abstract Object domainToDto(Optional<Contato> findById);
+	
+	@Mapping(target = "idContato", ignore = true)
+	@Mapping(target = "enderecos", ignore = true)
+	public abstract void updateContatoFromDTO(ContatoDTO contatoDTO,@MappingTarget Contato contato);
+
 
 }
